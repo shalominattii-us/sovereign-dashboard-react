@@ -1,0 +1,1 @@
+{"name":"sovereign-dashboard","version":"9.0.0","description":"Sovereign Dashboard","main":"server.js","scripts":{"start":"node server.js","build":"echo No build step"},"dependencies":{"express":"^4.18.2"}}
