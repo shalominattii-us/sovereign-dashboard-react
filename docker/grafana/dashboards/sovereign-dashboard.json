@@ -1,0 +1,55 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Sovereign Dashboard",
+    "tags": ["sovereign"],
+    "timezone": "browser",
+    "panels": [
+      {
+        "id": 1,
+        "title": "Active Connections",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "sovereign_active_connections",
+            "legendFormat": "Connections"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 6, "x": 0, "y": 0}
+      },
+      {
+        "id": 2,
+        "title": "Pending Batches",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "sovereign_pending_batches",
+            "legendFormat": "Batches"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 6, "x": 6, "y": 0}
+      },
+      {
+        "id": 3,
+        "title": "ESC Supply",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "sovereign_supply_circulating",
+            "legendFormat": "Circulating"
+          },
+          {
+            "expr": "sovereign_supply_cap",
+            "legendFormat": "Cap"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 8}
+      }
+    ],
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "refresh": "5s"
+  }
+}

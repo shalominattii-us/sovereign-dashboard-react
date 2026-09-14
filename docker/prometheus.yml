@@ -1,0 +1,28 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'sovereign-tsl'
+    static_configs:
+      - targets: ['tsl-minter:3000']
+    metrics_path: /metrics
+
+  - job_name: 'sovereign-dashboard'
+    static_configs:
+      - targets: ['dashboard-server:8443']
+    metrics_path: /metrics
+
+  - job_name: 'sovereign-ai'
+    static_configs:
+      - targets: ['ai-inference:3000']
+    metrics_path: /metrics
+
+  - job_name: 'sovereign-oracle'
+    static_configs:
+      - targets: ['attestation-oracle:3000']
+    metrics_path: /metrics
+
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
